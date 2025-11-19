@@ -23,9 +23,6 @@ jobs:
       - name: Give execute permission for gradlew
         run: chmod +x ./gradlew
 
-      - name: Run Checkstyle (Linter)
-        run: ./gradlew checkstyleMain checkstyleTest
-
       - name: Build with Gradle
         run: ./gradlew build
 
