@@ -1,9 +1,10 @@
 plugins {
-    id("java")
+    java
+    checkstyle
 }
 
-group = "org.wallet"
-version = "1.0-SNAPSHOT"
+group = "wallet"
+version = "1.0"
 
 repositories {
     mavenCentral()
@@ -16,4 +17,15 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+checkstyle {
+    toolVersion = "10.12.1"
+}
+
+tasks.withType<Checkstyle> {
+    reports {
+        xml.required.set(false)
+        html.required.set(true)
+    }
 }
